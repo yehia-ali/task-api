@@ -31,6 +31,7 @@
     position: absolute;
     top: 30%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
     color: #aaa;
     white-space: nowrap;
@@ -39,7 +40,8 @@
       display: block;
       font-size: 3.125rem;
       @media screen and (max-width: 576px) {
-        font-size: 18px;
+        font-size: 25px;
+        white-space: pre-line;
       }
     }
   }

@@ -25,6 +25,9 @@ header {
       @media screen and (max-width: 576px) {
         height: 30px;
       }
+      @media screen and (max-width: 320px) {
+        height: 20px;
+      }
     }
   }
   ul {

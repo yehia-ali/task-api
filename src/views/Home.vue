@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- 
-      home (reviews) > hyb3tha prop ll app-reviews
-      w hyb3t 2l add review function as prop ll app-banner
-
-     -->
     <app-header> </app-header>
     <app-banner> </app-banner>
 

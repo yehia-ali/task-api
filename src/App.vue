@@ -13,13 +13,11 @@ export default {
 <style>
 html {
   overflow-x: hidden;
+  background: #efefef;
 }
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
-}
-#app {
-  background: #efefef;
 }
 .text-center {
   text-align: center;

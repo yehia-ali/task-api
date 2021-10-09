@@ -45,6 +45,7 @@
           v-for="(reply, index) of review.replies"
           :key="index"
         >
+          <span></span>
           <p class="text-start">
             {{ reply }}
           </p>
@@ -106,7 +107,7 @@
   .card-rating {
     margin-bottom: 10px;
     @media screen and (max-width: 576px) {
-      text-align: left;
+      text-align: center;
     }
     .thumbs-up {
       background: #00b800;
@@ -157,7 +158,7 @@
   .profile-content {
     padding: 40px 80px;
     @media screen and (max-width: 576px) {
-      padding: 60px 42px 40px;
+      padding: 60px 35px 40px;
     }
   }
   .profile-comment {
@@ -167,9 +168,18 @@
     }
   }
   .reply {
-    background: #ebf0f2;
-    padding: 20px;
-    margin-bottom: 30px;
+    span {
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 25px solid #ebf0f2;
+    }
+    p {
+      background: #ebf0f2;
+      padding: 20px;
+      margin: 10px 0;
+    }
   }
 }
 </style>
@@ -216,43 +226,7 @@ export default {
     async addComment(rev, newComm) {
       rev.replies.push(newComm);
       this.newComment = "";
-      // console.log("id : ", id);
-      // const res = await axios.put(baseUrl, {
-      //   replies: this.newComment,
-      // });
-      // this.reviews = [...this.reviews, res.data];
-      // console.log(this.reviews);
-      // this.newComment = "";
     },
-    addReview: function() {
-      axios
-        .post(baseUrl, {
-          reviewId: "4",
-          authorName: this.authorName,
-          userComment: "This is the best app ever!",
-          Comment:
-            "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make",
-          starRating: 5,
-          date: new Date(),
-          picture: this.picture,
-          replies: [],
-        })
-        .then((res) => {
-          this.reviews = res.data;
-        });
-    },
-
-    // async addReview() {
-    //   rev.replies.push(newComm);
-    //   this.newComment = "";
-    //   // console.log("id : ", id);
-    //   // const res = await axios.put(baseUrl, {
-    //   //   replies: this.newComment,
-    //   // });
-    //   // this.reviews = [...this.reviews, res.data];
-    //   // console.log(this.reviews);
-    //   // this.newComment = "";
-    // },
   },
 };
 </script>
